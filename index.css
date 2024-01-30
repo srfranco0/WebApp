@@ -27,13 +27,7 @@ body {
     color: white;    /* color del text */
     background-color:black
 }
-#seccio_0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 4vmax;   
-}
+
 #credencials {
     display: flex;
     flex-direction: column;
@@ -48,6 +42,7 @@ body {
     max-width: 20vmax;    /* es limita l'espai que ocupen els quadres de text */
     font-size: 3vmax;
 }
+
 #botons_sessio {
     display: flex;
     align-items: center;
@@ -57,20 +52,33 @@ body {
     padding: 2vmin;
     margin: 1vmin;
 }
+
 .seccio {
-    flex: 1;    /* les seccions ocupen tot l'espai disponible */
+    flex: 0;    /* les seccions ocupen tot l'espai disponible */
     display: grid;    /* les seccions s'inicien ocultes, excepte la primera */
 }
+
 #seccio_0 {
-    display: none
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vmax;   
 }
 #seccio_1 {
     flex: 1;
-    display: flex;    /* única secció que es mostra a l'inici */
+    display: none;    /* única secció que es mostra a l'inici */
     justify-content: center;    /* contingut centrat en la direcció de disposició */
     align-items: center;    /* contingut centrat en la direcció transversal */
     font-size: 4vmax;
 }
+#seccio_2 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+
 #div_foto {
     flex: 1;
     display: flex;
@@ -160,6 +168,14 @@ body {
     display: none;    /* oculta la barra de desplaçament vertical */
 }
 @media (orientation: landscape) {
+    .seccio {
+        display: none;
+    }
+    #seccio_2 {
+        display: flex;
+        flex-direction: row;
+    }
+
     body {
         flex-direction: row;    /* sobreescriu la declaració flex-direction: column; */
         flex-flow: row-reverse;    /* disposició de dreta a esquerra, per mostrar el menú a l'esquerra */
@@ -167,15 +183,7 @@ body {
     #superior {
         display: none;    /* franja superior oculta per optimitzar l'espai */
     }
-    #seccio_1 {
-        display: none;
-    }
-    #seccio_3 {
-        display: none;
-    }
-    #seccio_4 {
-        display: none;
-    }
+
     #div_control{
         flex: center;
     }
@@ -184,19 +192,14 @@ body {
         width: 8vmax;
         height: auto;    /* sobreescriu la declaració height: 8vmax; */
     }
-    #seccio_2 {
-        flex-direction: column;
-    }
+
     #div_foto {
         flex-direction: column;
     }
     #div_control {
+        width: 25vmax;
         height: auto;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-        flex-direction: row;
-        
+        flex-direction: column;
     }
     #div_gran {
         max-height: 100vh;
