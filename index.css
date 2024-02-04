@@ -11,10 +11,16 @@ body {
     min-height: 100svh;    /* per a navegadors on la declaració anterior no és precisa */
     min-height: -webkit-fill-available;    
     margin: 0px;    /* elimina tots els marges del document */
-    font-family: sans-serif;    /* un tipus de lletra adient per a llocs web */
-    background-color: #e2deb7;    /* color de fons en format #RRGGBB */
+    font-family: monospace;    /* un tipus de lletra adient per a llocs web */
+    background-color: #868686;    /* color de fons en format #RRGGBB */
 }
-
+strong {
+    color: rgb(255, 255, 255);
+  }
+  
+  strong > strong {
+    color: red;
+  }
 #llista_fotos{  
     display:none
 }
@@ -53,9 +59,11 @@ body {
     margin: 1vmin;
 }
 
+/* seccions */
+
 .seccio {
-    flex: 0;    /* les seccions ocupen tot l'espai disponible */
-    display: grid;    /* les seccions s'inicien ocultes, excepte la primera */
+    flex: 1;    /* les seccions ocupen tot l'espai disponible */
+    display: none;    /* les seccions s'inicien ocultes, excepte la primera */
 }
 
 #seccio_0 {
@@ -66,15 +74,21 @@ body {
     font-size: 4vmax;   
 }
 #seccio_1 {
-    flex: 1;
-    display: none;    /* única secció que es mostra a l'inici */
+    display: flex;   /* única secció que es mostra a l'inici */
     justify-content: center;    /* contingut centrat en la direcció de disposició */
     align-items: center;    /* contingut centrat en la direcció transversal */
-    font-size: 4vmax;
+    font-size: 5vmax;
+    flex-direction: column;
+    margin: 3px;
 }
+#subtitol {
+    font-size: 3vmax; /* subtitol sota la seccio 1 */
+    padding: 1vmax;  
+    margin: 2px;
+    background: white;
+} 
 #seccio_2 {
-    display: flex;
-    flex: 1;
+    display: none;
     flex-direction: column;
 }
 
@@ -168,11 +182,9 @@ body {
     display: none;    /* oculta la barra de desplaçament vertical */
 }
 @media (orientation: landscape) {
-    .seccio {
-        display: none;
-    }
+
     #seccio_2 {
-        display: flex;
+        display: none;
         flex-direction: row;
     }
 
