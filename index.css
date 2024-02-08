@@ -15,7 +15,7 @@ body {
     background-color: #868686;    /* color de fons en format #RRGGBB */
 }
 strong {
-    color: rgb(255, 255, 255);
+    color: auto;
   }
   
   strong > strong {
@@ -34,6 +34,12 @@ strong {
     background-color:black
 }
 
+/* inici de sessio, seccio 0 */
+
+#IniciDeSessio {
+    background-color: whitesmoke;
+    padding: 1vmax;
+}
 #credencials {
     display: flex;
     flex-direction: column;
@@ -52,11 +58,15 @@ strong {
 #botons_sessio {
     display: flex;
     align-items: center;
+    background: black;
 }
 #botons_sessio button {    /* els 2 botons dins de botons_sessio */
     font-size: 3vmax;
     padding: 2vmin;
     margin: 1vmin;
+    font-family: inherit;
+    width: 20vmax;
+    height: 10vmax;
 }
 
 /* seccions */
@@ -67,14 +77,17 @@ strong {
 }
 
 #seccio_0 {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 4vmax;   
+    font-size: 4vmax; 
+    padding: 2vmax;
+    margin: 1vmax;  
+    background: darkgray;
 }
 #seccio_1 {
-    display: flex;   /* única secció que es mostra a l'inici */
+    display: none;   /* única secció que es mostra a l'inici */
     justify-content: center;    /* contingut centrat en la direcció de disposició */
     align-items: center;    /* contingut centrat en la direcció transversal */
     font-size: 5vmax;
@@ -142,7 +155,7 @@ strong {
     cursor: pointer;
 }
 #menu {
-    display: flex;    /* el menú és un contenidor de tipus flex */
+    display: none;    /* el menú és un contenidor de tipus flex */
     height: 8vmax;
 }
 #menu i{
@@ -184,7 +197,6 @@ strong {
 @media (orientation: landscape) {
 
     #seccio_2 {
-        display: none;
         flex-direction: row;
     }
 
