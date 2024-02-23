@@ -74,7 +74,10 @@ strong {
 .seccio {
     flex: 1;    /* les seccions ocupen tot l'espai disponible */
     display: none;    /* les seccions s'inicien ocultes, excepte la primera */
+    padding: 2px  
 }
+
+/* seccio 0 */
 
 #seccio_0 {
     display: flex;
@@ -86,6 +89,9 @@ strong {
     margin: 1vmax;  
     background: darkgray;
 }
+
+/* seccio 1 */
+
 #seccio_1 {
     display: none;   /* única secció que es mostra a l'inici */
     justify-content: center;    /* contingut centrat en la direcció de disposició */
@@ -100,11 +106,13 @@ strong {
     margin: 2px;
     background: white;
 } 
+
+/*seccio 2*/
+
 #seccio_2 {
     display: none;
     flex-direction: column;
 }
-
 
 #div_foto {
     flex: 1;
@@ -129,7 +137,7 @@ strong {
 #div_control i {
     cursor: pointer;
     font-size: 20vmin;    
-    color: rgb(154, 253, 97);
+    color: red;
 }
 #obturador {
     position: absolute;
@@ -154,25 +162,21 @@ strong {
     max-height: 95vmax;
     cursor: pointer;
 }
-#menu {
-    display: none;    /* el menú és un contenidor de tipus flex */
-    height: 8vmax;
-}
-#menu i{
-    flex: 1;    /* cada botó pretén ocupar tot l'espai disponible */
-    display: flex;    /* contenidor flex on centrar-hi la icona */
-    justify-content: center;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    background-color: #000000;
-    font-size: 4vmax;   
-    cursor: pointer;    /* en ordinadors, indica que s'hi pot fer clic */
+
+/* seccio 3 */
+
+#seccio_3 {
+    display: none;
+    flex-direction: column;
 }
 #llista_titol {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin: 4px;
+    padding: 5px;
+    background-color: darkgray;
 }
 #llista_titol i {
     font-size: 4vmax;
@@ -194,6 +198,24 @@ strong {
 #llista_fotos::-webkit-scrollbar {
     display: none;    /* oculta la barra de desplaçament vertical */
 }
+
+/* menu */
+
+#menu {
+    display: none;    /* el menú és un contenidor de tipus flex */
+    height: 8vmax;
+}
+#menu i{
+    flex: 1;    /* cada botó pretén ocupar tot l'espai disponible */
+    display: flex;    /* contenidor flex on centrar-hi la icona */
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    font-size: 4vmax;   
+    cursor: pointer;    /* en ordinadors, indica que s'hi pot fer clic */
+}
+
 @media (orientation: landscape) {
 
     #seccio_2 {
@@ -237,4 +259,9 @@ strong {
     }
     
 } 
+
+.ocult {
+    display: none !important;    /* amb prioritat sobre les declaracions condicionals segons l'orientació */
+}
+
 
